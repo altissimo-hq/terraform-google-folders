@@ -1,13 +1,16 @@
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.3 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | >= 6.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | n/a |
+| <a name="provider_google"></a> [google](#provider\_google) | >= 6.0 |
 
 ## Modules
 
@@ -25,6 +28,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
+| <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Prevent Terraform from destroying the folders. Passed through to google\_folder.deletion\_protection (defaults to true since google provider 6.0.0). | `bool` | `true` | no |
 | <a name="input_folders"></a> [folders](#input\_folders) | Map of folder names => principals => roles. | `map(map(list(string)))` | n/a | yes |
 | <a name="input_parent"></a> [parent](#input\_parent) | Parent Name (ex. organizations/123456789 or folders/123456789) | `string` | n/a | yes |
 

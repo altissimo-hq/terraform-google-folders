@@ -1,8 +1,9 @@
 # Create the folders
 resource "google_folder" "folders" {
-  for_each     = var.folders
-  display_name = each.key
-  parent       = var.parent
+  for_each            = var.folders
+  display_name        = each.key
+  parent              = var.parent
+  deletion_protection = var.deletion_protection
 }
 
 # Create the folder IAM policies
